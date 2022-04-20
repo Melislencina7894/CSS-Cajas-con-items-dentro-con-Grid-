@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    /*acá significa que quiero crear 6 columnas, muy importante
+    colocar coma luego de cant de columnas
+     conviene en fr en la repetición porque me hace ocupar todo el espacio*/
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    /*esto de abajo es para determinar el espaciado de filas
+    quiere decir que no importa cuanto texto falta, pero como 
+    mínimo va a ocupar 100px
+    Lo mismo con max no importa cuanto texto tenga 100 px será lo máximo
+    pongo auto para que se me acomoden todas las letras de adentro*/
+    grid-template-rows: minmax(100px, auto);  
+}
+
+/*recordar poner guion cuando pongo dos nombres en una clase*/
+.nester-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*para generar un espaciado entre las filas va lo de abajo*/
+    grid-auto-rows: 100px;
+    gap: 1em;
+}
+
+/*esto de abajo es para ponerle estilo a las grillas del item*/
+.nester-grid > div {
+    border: 1px solid black;
+    background-color: aqua;
+    padding: 1em;
+}
+
+
+/*esta parte es para todos los estilos de la grilla general
+pongo el símbolo > para que me tome únicamente los div del contenedor general*/
+.container > div {
+    background-color: papayawhip;
+    padding: 1em;
+    
+}
+.container > div:hover {
+    border: 1px solid grey;
+}
+
